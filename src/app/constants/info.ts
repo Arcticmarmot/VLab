@@ -1,3 +1,4 @@
+export const PASSWORDPATTERN = /^(?![a-zA-z]+$)(?!\d+$)(?![!@#$%^&*]+$)[a-zA-Z\d!@#$%^&*]{6,20}$/;
 export const LEADER_DATA = {
   cols: ['姓名', '性别', '出生年月', '学历', '学位', '专业技术职务', '行政职务', '院系'],
   objs: [

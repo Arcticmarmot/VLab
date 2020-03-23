@@ -3,7 +3,20 @@
     <nz-header class="header">
       <div class="wrap">
         <div class="title">
-          <strong>VLab</strong>
+          <a [routerLink]="['/home']"><strong>VLab</strong></a>
+        </div>
+        <mat-menu #personalMenu="matMenu">
+          <button mat-menu-item *ngIf="role === 'student'"><strong>开始实验</strong></button>
+          <button mat-menu-item *ngIf="role === 'teacher'"><strong>开始批改</strong></button>
+          <button mat-menu-item (click)="logout()"><strong>注销</strong></button>
+        </mat-menu>
+        <div id="release" [matMenuTriggerFor]="personalMenu" (click)="openPersonalMenu()">
+          <i nz-icon nzType="user" nzTheme="outline"
+             style="
+             font-size: 30px;
+             color: rgb(237,205,151);
+             margin-right: 25px;
+             margin-top: 15px"></i>
         </div>
       </div>
     </nz-header>
