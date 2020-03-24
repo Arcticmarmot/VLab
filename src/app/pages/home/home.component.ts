@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/login/auth.service';
 import {UserInfo} from '../../constants/type';
-import {UpdateAuthService} from "../../services/login/update-auth.service";
-import {Router} from "@angular/router";
+import {UpdateAuthService} from '../../services/login/update-auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  userInfo: UserInfo;
+  userInfo: UserInfo = {auth: false, role: 'student'};
   constructor(private authService: AuthService,
               private updateAuthService: UpdateAuthService,
               private route: Router) {
