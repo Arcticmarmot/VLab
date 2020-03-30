@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     if (!this.userInfo.auth) {
       this.route.navigate(['/login']);
     } else {
-
+      this.route.navigate(['/entrance']);
     }
   }
 }
