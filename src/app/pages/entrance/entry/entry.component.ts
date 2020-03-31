@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserPermission} from '../../../constants/type';
+import {ReportState} from "../../../constants/type";
 
 @Component({
   selector: 'app-entry',
@@ -7,8 +7,8 @@ import {UserPermission} from '../../../constants/type';
   styleUrls: ['./entry.component.less']
 })
 export class EntryComponent implements OnInit {
-  @Input() caseNum;
-  @Input() permission: UserPermission;
+  @Input() report: ReportState;
+  @Input() role;
   constructor() { }
 
   ngOnInit(): void {

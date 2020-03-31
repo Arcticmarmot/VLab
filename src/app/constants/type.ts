@@ -2,12 +2,16 @@ export interface UserData {
   account: string;
   password: string;
 }
-export interface UserInfo {
+export interface UserAuthInfo {
   auth: boolean;
   role: 'student'|'teacher';
 }
-export interface UserPermission {
+export interface ReportState {
+  name: string;
+  isSubmit: boolean;
+  id: string;
+}
+export interface UserInfo {
   role: 'student'|'teacher';
-  canCheck: boolean;
-  canCorrect: boolean;
+  reports: Array<ReportState>;
 }

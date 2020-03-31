@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../services/login/auth.service';
-import {UserInfo} from '../../constants/type';
+import {UserAuthInfo, UserInfo} from '../../constants/type';
 import {UpdateAuthService} from '../../services/login/update-auth.service';
 import {Router} from '@angular/router';
 
@@ -10,7 +10,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  userInfo: UserInfo = {auth: false, role: 'student'};
+  userAuthInfo: UserAuthInfo = {auth: false, role: 'student'};
   constructor(private authService: AuthService,
               private updateAuthService: UpdateAuthService,
               private route: Router) {
@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit {
   updateAuth() {
     this.authService.authorize().subscribe(
       (res: {auth: boolean, role: 'student' | 'teacher'}) => {
-        this.userInfo = res;
+        this.userAuthInfo = res;
       }
     );
   }
   start() {
-    if (!this.userInfo.auth) {
+    if (!this.userAuthInfo.auth) {
       this.route.navigate(['/login']);
     } else {
       this.route.navigate(['/entrance']);

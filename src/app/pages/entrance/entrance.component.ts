@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserInfo} from '../../constants/type';
+import {ReportStateService} from '../../services/report/report-state.service';
 
 @Component({
   selector: 'app-entrance',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entrance.component.less']
 })
 export class EntranceComponent implements OnInit {
-
-  constructor() { }
+  userInfo: UserInfo;
+  constructor(private reportStateService: ReportStateService) { }
 
   ngOnInit(): void {
+    this.reportStateService.getReportState().subscribe(
+      res => {
+        this.userInfo = res;
+      }
+    );
   }
 
 }

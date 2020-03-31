@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import {UpdateAuthService} from './services/login/update-auth.service';
 import {AuthService} from './services/login/auth.service';
 import {LogoutService} from './services/login/logout.service';
+import {UserAuthInfo} from './constants/type';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import {LogoutService} from './services/login/logout.service';
 })
 export class AppComponent implements OnInit {
   isLogin = false;
-  role: 'student'|'teacher';
+  userAuthInfo: UserAuthInfo = {auth: false, role: 'student'};
   @ViewChild(MatMenuTrigger, {static: false}) trigger: MatMenuTrigger;
   constructor(private authService: AuthService,
               private logoutService: LogoutService,
@@ -43,8 +44,7 @@ export class AppComponent implements OnInit {
   updateAuth() {
     this.authService.authorize().subscribe(
       (res: {auth: boolean, role: 'student' | 'teacher'}) => {
-        this.isLogin = res.auth;
-        this.role = res.role;
+        this.userAuthInfo = res;
       }
     );
   }
