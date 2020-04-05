@@ -1,1 +1,57 @@
-<p>report works!</p>
+<div id="report">
+  <div class="title-wrap">
+    <h1>书写报告</h1>
+  </div>
+  <form [formGroup]="formData" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput value="" placeholder="检查方法" formControlName="checkMethod">
+      <mat-error *ngIf="formData.controls['checkMethod'].hasError('required')">
+        不能为空
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput value="" placeholder="病人姓名" formControlName="patientName">
+      <mat-error *ngIf="formData.controls['patientName'].hasError('required')">
+        不能为空
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="检查日期" formControlName="checkData">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="formData.controls['checkData'].hasError('required')">
+        不能为空
+      </mat-error>
+    </mat-form-field>
+
+    <mat-radio-group formControlName="gender">
+      <mat-radio-button value="男">男</mat-radio-button>
+      <mat-radio-button value="女">女</mat-radio-button>
+    </mat-radio-group>
+
+   <mat-form-field>
+      <input matInput value="" placeholder="年龄" formControlName="age">
+      <mat-error *ngIf="formData.controls['age'].hasError('required')">
+        不能为空
+      </mat-error>
+      <mat-error *ngIf="formData.controls['age'].hasError('pattern')">
+        年龄不合法
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput value="" placeholder="影像所见" formControlName="checkFinding"></textarea>
+      <mat-error *ngIf="formData.controls['checkFinding'].hasError('required')">
+        不能为空
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput value="" placeholder="结论" formControlName="conclusion"></textarea>
+      <mat-error *ngIf="formData.controls['conclusion'].hasError('required')">
+        不能为空
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-button type="submit" [disabled]="!formData.valid">Submit</button>
+
+  </form>
+</div>

@@ -5,6 +5,7 @@ import {LoginModule} from './login/login.module';
 import {EntranceModule} from "./entrance/entrance.module";
 import {MainInfoModule} from "./main-info/main-info.module";
 import {KeyInfoModule} from './key-info/key-info.module';
+import {ReportModule} from "./report/report.module";
 
 
 
@@ -18,7 +19,8 @@ import {KeyInfoModule} from './key-info/key-info.module';
     LoginModule,
     EntranceModule,
     MainInfoModule,
-    KeyInfoModule
+    KeyInfoModule,
+    ReportModule
   ]
 })
 export class PagesModule { }
