@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ReportState} from "../../../constants/type";
+import {ReportState} from '../../../constants/type';
+import {MainInfoService} from "../../../services/info/main-info.service";
 
 @Component({
   selector: 'app-entry',
@@ -9,9 +10,17 @@ import {ReportState} from "../../../constants/type";
 export class EntryComponent implements OnInit {
   @Input() report: ReportState;
   @Input() role;
-  constructor() { }
+  constructor(private mainInfoService: MainInfoService) { }
 
   ngOnInit(): void {
   }
 
+  jump() {
+    this.mainInfoService.getUrl(this.report.name).subscribe(
+      res => {
+        console.log(res);
+        window.open(res.data);
+      }
+    );
+  }
 }

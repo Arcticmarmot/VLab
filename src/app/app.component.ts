@@ -50,7 +50,7 @@ export class AppComponent implements OnInit {
   }
 
   openPersonalMenu() {
-    if (!this.isLogin) {
+    if (!this.userAuthInfo.auth) {
       this.trigger.closeMenu();
       this.route.navigate(['/login']);
     }

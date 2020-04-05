@@ -2,11 +2,13 @@
   <mat-divider></mat-divider>
   <div class="wrap">
     <div class="case"><strong>{{report.name}}</strong></div>
-    <button mat-button style="background-color: wheat"><strong>病史及主诉</strong></button>
-    <button mat-button style="background-color: white"><strong>影像资料</strong></button>
+    <button mat-button style="background-color: wheat" [routerLink]="['/main_info', report.name]"><strong>病史及主诉</strong></button>
+    <button mat-button style="background-color: white" (click)="jump()"><strong>影像资料</strong></button>
     <button mat-button style="background-color: wheat"><strong>书写报告</strong></button>
     <button mat-button style="background-color: white"
-            [disabled]="!report.isSubmit"><strong>正确影像描述诊断及病理结果</strong></button>
+            [disabled]="!report.isSubmit && role === 'student'"
+            [routerLink]="['/key', report.name]"
+    ><strong>正确影像描述诊断及病理结果</strong></button>
     <button mat-button style="background-color: wheat"
             [disabled]="role === 'student'"><strong>老师批改及打分</strong></button>
   </div>

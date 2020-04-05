@@ -1,0 +1,18 @@
+<div id="main-info">
+  <div class="title">
+    <strong>正确答案</strong>
+  </div>
+  <div class="wrap">
+    <div class="content">
+      <p>描述: {{data.data.report.desc}}</p>
+    </div>
+    <div class="content">
+      <p>结论: {{data.data.report.conclusion}}</p>
+    </div>
+    <div class="content" *ngIf="data.data.pathology">
+      <p>病理: {{data.data.pathology}}</p>
+    </div>
+  </div>
+
+
+</div>
