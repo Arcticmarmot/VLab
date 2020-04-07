@@ -6,6 +6,7 @@ import {EntranceModule} from "./entrance/entrance.module";
 import {MainInfoModule} from "./main-info/main-info.module";
 import {KeyInfoModule} from './key-info/key-info.module';
 import {ReportModule} from "./report/report.module";
+import {CorrectModule} from "./correct/correct.module";
 
 
 
@@ -20,7 +21,8 @@ import {ReportModule} from "./report/report.module";
     EntranceModule,
     MainInfoModule,
     KeyInfoModule,
-    ReportModule
+    ReportModule,
+    CorrectModule
   ]
 })
 export class PagesModule { }

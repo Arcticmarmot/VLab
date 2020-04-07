@@ -17,6 +17,7 @@
             [routerLink]="['/key', report.name]"
     ><strong>正确影像描述诊断及病理结果</strong></button>
     <button mat-button style="background-color: wheat"
+            [routerLink]="['/correct',report.name]"
             [disabled]="role === 'student'"
     ><strong>老师批改及打分</strong></button>
   </div>

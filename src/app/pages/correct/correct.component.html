@@ -1,0 +1,37 @@
+<div id="correct">
+  <div class="title">
+    <strong>批改</strong>
+  </div>
+  <div class="wrap">
+    <mat-expansion-panel *ngFor="let e of data">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{e.student}}
+        </mat-panel-title>
+        <mat-panel-description>
+          点击此处查看
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="sub-wrap">
+        <div class="content">
+          <p>检查方法:  {{e.checkMethod}}</p>
+          <p>病人姓名:  {{e.patientName}}</p>
+          <p>年龄:  {{e.age}}</p>
+          <p>性别:  {{e.gender}}</p>
+          <p>检查日期:  {{e.checkData}}</p>
+          <p>影像所见:  {{e.checkFinding}}</p>
+          <p>结论:  {{e.conclusion}}</p>
+        </div>
+        <div class="correct" *ngIf="!e.score">
+          <mat-form-field>
+            <input matInput placeholder="分数" [formControl]=e.scoreControl>
+          </mat-form-field>
+          <button mat-button (click)="correct(e.student, e.scoreControl.value)">保存</button>
+        </div>
+        <div class="static-correct" *ngIf="e.score">
+          分数: {{e.score}}
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>
