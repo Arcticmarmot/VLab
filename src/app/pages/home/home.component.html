@@ -2,10 +2,17 @@
   <div class="head">
     <div class="left">
       <div class="title">
-        <strong>综合性CT仿真检查技术实验</strong>
+        <strong>基于PACS的肺肿瘤影像诊断虚拟仿真实验教学项目</strong>
       </div>
       <div class="detail">
-        <p>本虚拟教学项目通过一个自主研制“软、硬件结合”的CT虚拟仿真教学系统为平台，将医用CT成像有关的CT成像原理知识、设备构造及参数、检查技术操作要点、影像诊断四个既相互独立又相互关联的过程几乎“完整”的虚拟仿真出来。可不限时间、场合，反复多次开设CT有关综合性、开放性实验项目。具有全面综合、价廉、无辐射、高效等特点，特别适合资源、经费相对不足的省属本科医学院校开展CT医学影像有关多门课程的实验教学</p>
+        <p>本项目借助现代化的教学图像存档与传输系统（PACS）的虚拟仿真实验教学手段，通过基于问题和案例的互动式、研讨式教学方式方法，使学生成为教学活动的主体，培养增强学生自主式、合作式、探究式学习能力，使学生掌握中央型肺癌、周围型肺癌的X线、CT、MRI的影像学诊断及鉴别诊断。提高影像学实验教学的效果和效率。
+        </p>
+        <p>
+        试用账号：111    试用密码：111
+        </p>
+        <p>
+        教师试用账号：222    试用密码：222
+        </p>
       </div>
       <div class="options">
         <button mat-button (click)="start()"><strong>开始{{userAuthInfo?userAuthInfo.role==='teacher'?'批改':'实验':'实验'}}</strong></button>
@@ -23,9 +30,6 @@
   <div class="content">
     <div class="wrap">
       <mat-tab-group dynamicHeight="true">
-        <mat-tab label="项目团队">
-          <app-introduce></app-introduce>
-        </mat-tab>
         <mat-tab label="项目描述">
           <app-project-describe></app-project-describe>
         </mat-tab>
