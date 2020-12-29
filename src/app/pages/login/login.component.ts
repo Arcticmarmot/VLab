@@ -13,7 +13,8 @@ import {UpdateAuthService} from "../../services/login/update-auth.service";
 export class LoginComponent implements OnInit {
   loginFormData = this.fb.group({
     account: ['', [Validators.required]],
-    password: ['', [Validators.required, Validators.pattern(PASSWORDPATTERN)]]
+    // password: ['', [Validators.required, Validators.pattern(PASSWORDPATTERN)]]
+    password: ['', [Validators.required]]
   });
   isCookieEnable: boolean;
   constructor(private fb: FormBuilder,

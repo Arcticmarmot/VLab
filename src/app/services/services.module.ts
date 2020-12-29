@@ -4,7 +4,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {CustomInterceptorService} from './interceptor/custom-interceptor.service';
 
 export const API_CONFIG = new InjectionToken('ApiConfigToken');
-const localhost = 'http://localhost:3000/';
+const localhost = 'http://119.45.40.144:3000/';
 @NgModule({
   declarations: [],
   imports: [
