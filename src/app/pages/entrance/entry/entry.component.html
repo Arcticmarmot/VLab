@@ -9,11 +9,12 @@
             (click)="jump()"
     ><strong>影像资料</strong></button>
     <button mat-button style="background-color: wheat"
-            [disabled]="role==='teacher' || report.isSubmit"
+            [disabled]="role==='teacher'"
             [routerLink]="['/report', report.name]"
     ><strong>书写报告</strong></button>
+    <!--!report.isSubmit && -->
     <button mat-button style="background-color: white"
-            [disabled]="!report.isSubmit && role === 'student'"
+            [disabled]="role === 'student'"
             [routerLink]="['/key', report.name]"
     ><strong>正确影像描述诊断及病理结果</strong></button>
     <button mat-button style="background-color: wheat"
