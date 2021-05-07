@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   userAuthInfo: UserAuthInfo = {auth: false, role: 'student'};
+  isIntro = true;
   constructor(private authService: AuthService,
               private updateAuthService: UpdateAuthService,
               private route: Router) {
@@ -37,6 +38,13 @@ export class HomeComponent implements OnInit {
     } else {
       this.route.navigate(['/entrance']);
     }
+  }
+
+  changeIsIntroToTrue() {
+    this.isIntro = true;
+  }
+  changeIsIntroToFalse() {
+    this.isIntro = false;
   }
 }
 

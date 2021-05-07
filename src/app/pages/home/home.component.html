@@ -8,7 +8,7 @@
         <p>本项目借助现代化的教学图像存档与传输系统（PACS）的虚拟仿真实验教学手段，通过基于问题和案例的互动式、研讨式教学方式方法，使学生成为教学活动的主体，培养增强学生自主式、合作式、探究式学习能力，使学生掌握中央型肺癌、周围型肺癌的X线、CT、MRI的影像学诊断及鉴别诊断。提高影像学实验教学的效果和效率。
         </p>
         <p>
-        学生试用账号：111    试用密码：111
+         <strong>学生试用账号：111    试用密码：111</strong>
         </p>
         <!--<p>
         教师试用账号：222    试用密码：222
@@ -16,16 +16,24 @@
         -->
       </div>
       <div class="options">
-        <button mat-button (click)="start()"><strong>开始{{userAuthInfo?userAuthInfo.role==='teacher'?'批改':'实验':'实验'}}</strong></button>
+        <button mat-raised-button color="primary" (click)="start()"><strong>开始{{userAuthInfo?userAuthInfo.role==='teacher'?'批改':'实验':'实验'}}</strong></button>
       </div>
     </div>
     <div class="right">
-      <div class="intro">
-        <strong>项目简介视频</strong>
+      <div class="select">
+        <button mat-raised-button color="primary" (click)="changeIsIntroToTrue()">简介视频</button>
+        <button mat-raised-button color="primary" (click)="changeIsIntroToFalse()">引导视频</button>
       </div>
-      <video controls>
-        <source src="../../../assets/videos/intro.mp4" type="video/mp4">
-      </video>
+      <div class="video-wrap" *ngIf="isIntro">
+        <video controls>
+          <source src="../../../assets/videos/intro.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrap" *ngIf="!isIntro">
+        <video controls>
+          <source src="../../../assets/videos/guide.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
   <div class="content">
